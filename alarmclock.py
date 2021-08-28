@@ -2,7 +2,6 @@
 from datetime import datetime  # To set date and time
 from playsound import playsound  # To play sound
 
-
 def validate_time(alarm_time):
     if len(alarm_time) != 11:
         return "Invalid time format! Please try again..."
@@ -14,14 +13,13 @@ def validate_time(alarm_time):
         elif int(alarm_time[6:8]) > 59:
             return "Invalid SECOND format! Please try again..."
         else:
-            return "ok"
-
+            return "valid"
 
 while True:
     alarm_time = input("Enter time in 'HH:MM:SS AM/PM' format: ")
 
     validate = validate_time(alarm_time.lower())
-    if validate != "ok":
+    if validate != "valid":
         print(validate)
     else:
         print(f"Setting alarm for {alarm_time}")
